@@ -338,7 +338,7 @@ style: style7,
 onEachFeature: onEachFeature6
 });
 
-var geojsonLayer8 = new L.GeoJSON.AJAX("https://kendyl66.github.io/LA458-558/work/Neighborhoods.geojson", {
+var geojsonLayer8 = new L.GeoJSON.AJAX("https://kendyl66.github.io/work/Neighborhoods.geojson", {
 style: style8,
 onEachFeature: onEachFeature8
 });
