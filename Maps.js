@@ -148,22 +148,6 @@ function getColor7(d) {
                 //dashArray: '3'
             };
         }
-function getColor8(d) {
-        return d == 0 ? '#ffffff' :
-        '#FFFFFF'; //this will be the default if none of the above match these numbers
-    }
-    //now i need to set the function for style
-        function style8(feature) {
-            return {
-                fillColor: getColor6(feature.properties.NHAMES),
-                stroke: true,
-                weight: 2,
-                color: '#1F2B45',
-                opacity: 1.0,
-                fillOpacity: 0, 
-                //dashArray: '3'
-            };
-        }
 
 function highlightFeature(e) {
     var layer = e.target;
@@ -287,17 +271,7 @@ function onEachFeature6(feature, layer) {
         //click: zoomToFeature
     })
 }
-function onEachFeature8(feature, layer) {
-    
-    tract = feature.properties.NAME.toLocaleString();
-  
-  layer.bindPopup('<strong>Enumeration District: </strong>' + tract),
-      layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight7,
-        //click: zoomToFeature
-    })
-}
+
 //for each polygon 
 
 //Load GeoJSON files for each year
@@ -338,10 +312,6 @@ style: style7,
 onEachFeature: onEachFeature6
 });
 
-var geojsonLayer8 = new L.GeoJSON.AJAX("https://kendyl66.github.io/work/Neighborhoods.geojson", {
-style: style8,
-onEachFeature: onEachFeature8
-});
 //I was unable to figure out how to properly put pop up tools on my maps, but I intend to figure this out soon. 
         var baseMaps = {
         "OpenStreetMap": osm,
@@ -355,7 +325,6 @@ onEachFeature: onEachFeature8
             "2010": geojsonLayer4,
             "HOLC Map": geojsonLayer5,
             "City": geojsonLayer6,
-            "Neighborhoods": geojsonLayer8,
 
         };
           
